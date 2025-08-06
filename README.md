@@ -35,7 +35,7 @@ Here’s how to get this running on your own machine.
 * Python 3 & pip
 * A free Google AI API Key
 
-### 1. Get the Backend Running
+### 1. Getting the Backend and Frontend Running
 ```bash
 # First, navigate into the backend folder
 cd backend
@@ -52,9 +52,8 @@ flask run
 **
 
 **
-### **2. Get the Frontend Running**
 ```bash
-# First, navigate into the frontend folder
+# Second, navigate into the frontend folder
 cd frontend
 
 # Install the necessary dependencies
@@ -62,3 +61,4 @@ npm install
 
 # Now, start the server!
 npm start
+
