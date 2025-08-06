@@ -35,7 +35,7 @@ Here’s how to get this running on your own machine.
 * Python 3 & pip
 * A free Google AI API Key
 
-### 1. Getting the Backend and Frontend Running
+## Getting the Backend and Frontend Running
 ```bash
 # First, navigate into the backend folder
 cd backend
