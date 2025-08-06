@@ -1,4 +1,4 @@
-# --- Imports ---
+
 import os
 import requests
 from flask import Flask, request, jsonify
@@ -7,21 +7,21 @@ from flask_cors import CORS
 from dotenv import load_dotenv
 import google.generativeai as genai
 
-# --- App & Database Setup ---
+
 load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-# Database configuration
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'instance', 'skills.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 os.makedirs(os.path.join(basedir, 'instance'), exist_ok=True)
 
-# --- Database Model ---
+
 class Skill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     skill_name = db.Column(db.String(100), nullable=False)
@@ -35,7 +35,7 @@ class Skill(db.Model):
     def to_dict(self):
         return {key: getattr(self, key) for key in self.__table__.c.keys()}
 
-# --- API Endpoints ---
+
 @app.before_request
 def create_all_tables():
     db.create_all()
@@ -55,11 +55,11 @@ def handle_skills():
         db.session.commit()
         return jsonify(new_skill.to_dict()), 201
     
-    # This is the GET request
+ 
     skills = Skill.query.all()
     return jsonify([skill.to_dict() for skill in skills])
 
-# --- THIS IS THE CORRECTED ROUTE ---
+
 @app.route('/skills/<int:id>', methods=['PUT', 'DELETE'])
 def handle_single_skill(id):
     """Handles updating or deleting a single skill."""
