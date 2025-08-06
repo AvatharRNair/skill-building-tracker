@@ -49,3 +49,14 @@ pip install -r requirements.txt
 
 # Now, start the server!
 flask run
+
+### **2. Get the Frontend Running**
+```bash
+# First, navigate into the frontend folder
+cd frontend
+
+# Install the necessary dependencies
+npm install
+
+# Now, start the server!
+npm start
