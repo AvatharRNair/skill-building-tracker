@@ -1,0 +1,9 @@
+# Environment variables - KEEP THESE SECRET
+.env
+backend/.env
+
+# Python virtual environment
+/backend/venv/
+
+# Node modules folder
+/frontend/node_modules/
