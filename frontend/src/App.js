@@ -42,7 +42,7 @@ function App() {
     alert(`AI Summary:\n\n${response.data.summary}`);
   };
 
-  // --- THIS IS THE NEW DELETE FUNCTION ---
+
   const handleDelete = async (id) => {
     // Show a confirmation dialog to prevent accidental deletion
     if (window.confirm("Are you sure you want to delete this skill?")) {
