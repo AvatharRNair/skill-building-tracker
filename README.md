@@ -53,7 +53,7 @@ flask run
 
 **
 ```bash
-# Second, navigate into the frontend folder
+# Second, navigate into the frontend folder (in a split new terminal)
 cd frontend
 
 # Install the necessary dependencies
